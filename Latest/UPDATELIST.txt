@@ -4,4 +4,4 @@
 # archiving whatever was there before into PreviousVersions\ first.
 # Lines starting with # are ignored.
 
-Reinstall-CCMClient-v1.1.ps1
+Reinstall-CCMClient-v1.2.ps1
