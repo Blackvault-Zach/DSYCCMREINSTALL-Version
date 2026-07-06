@@ -1,0 +1,7 @@
+# Files to update for this release.
+# One relative path per line, relative to this "latest" folder on GitHub.
+# The updater downloads each one and drops it into C:\Temp\SoftwareCenter\,
+# archiving whatever was there before into PreviousVersions\ first.
+# Lines starting with # are ignored.
+
+Reinstall-CCMClient-v1.1.ps1

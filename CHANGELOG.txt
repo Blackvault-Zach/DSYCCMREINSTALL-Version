@@ -1,0 +1,22 @@
+CCM Reinstall Tool - Changelog
+================================
+
+v1.1.0
+------
+- Fixed D (detailed health check) dead-ending the script - the issue only
+  showed up with -SkipChecks: choosing D sent the flow back through the
+  requirements-check path, which had nothing to evaluate since checks were
+  skipped, so it failed and exited with no way back instead of returning
+  to the menu. Now Show-HealthCheck loops directly back into the same
+  C/D/N menu - no second prompt, no dead end
+- Resume-after-reboot prompt replaced with a 10s non-blocking countdown
+  (Console.KeyAvailable polling) instead of a blocking Y/N Read-Host -
+  Y starts immediately, N cancels and cleans up state/task, timeout with
+  no input auto-proceeds into Phase 2
+- Added Invoke-LogRotation function - runs on every launch, sorts
+  CCMReinstall-Logs\ by LastWriteTime descending, keeps the 15 most
+  recent ccmsetup_*.log files and deletes the rest
+- Added orphaned state/task cleanup on fresh (non-resume) launch - checks
+  for a leftover CCMReinstall.json or a leftover CCMClientReinstall
+  scheduled task from a prior run that crashed before reaching its own
+  cleanup, and removes both before the requirements check runs
