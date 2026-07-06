@@ -1,1 +1,4 @@
-
+v1.3.0 TEST
+This update is a test of the automatic updating system.
+There is nothing further to do here, and nothing has changed since 1.2.0.
+To confirm the update has been performed successfully, confirm the file name of your Reinstall-CCMClient-v1.2.ps1 has updated to v1.3
